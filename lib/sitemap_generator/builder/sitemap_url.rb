@@ -134,7 +134,7 @@ module SitemapGenerator
 
           self[:alternates].each do |alternate|
             rel = alternate[:nofollow] ? 'alternate nofollow' : 'alternate'
-            media = !alternate[:media].blank? : alternate[:media] : nil
+            media = !alternate[:media].blank? ? alternate[:media] : nil
             builder.xhtml :link, :rel => rel, :hreflang => alternate[:lang].to_s, :href => alternate[:href].to_s, :media => media
           end
 
